@@ -17,13 +17,13 @@ const CandidateSearch = () => {
       if (data.length > 0) {
         const randomUser = data[Math.floor(Math.random() * data.length)];
         const detailedUser = await searchGithubUser(randomUser.login);
-        setCandidate(detailedUser); // Set only if the candidate matches the Candidate type
+        setCandidate(detailedUser); 
       } else {
         setCandidate(null);
       }
     } catch (err) {
       console.error('Error fetching candidate:', err);
-      setCandidate(null); // Set to null in case of error
+      setCandidate(null);
     }
   };
   const handleSaveCandidate = () => {
